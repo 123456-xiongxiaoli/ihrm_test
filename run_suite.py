@@ -16,7 +16,7 @@ suite=unittest.TestSuite()
 #添加测试用例到测试套件
 suite.addTest(unittest.makeSuite(IhrmTest))
 #定义文件路径和文件名
-file_path="./report/{}.html".format(time.strftime("%Y%m%d%H%M%S"))
+file_path="./report/report.html"
 #打开文件流
 with open(file_path,"wb") as f:
 
