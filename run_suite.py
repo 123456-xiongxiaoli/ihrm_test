@@ -4,6 +4,8 @@
 #导包
 import time
 
+from BeautifulReport import BeautifulReport
+
 from case.test_login import IhrmTest
 
 
@@ -15,13 +17,17 @@ import unittest
 suite=unittest.TestSuite()
 #添加测试用例到测试套件
 suite.addTest(unittest.makeSuite(IhrmTest))
-#定义文件路径和文件名
-file_path="./report/report.html"
-#打开文件流
-with open(file_path,"wb") as f:
+# #定义文件路径和文件名
+# file_path="./report/report.html"
+# #打开文件流
+# with open(file_path,"wb") as f:
+#
+#     #实例化HTMLTestRunner对象
+#     runner_test=HTMLTestRunner(f,title="人力资源测试报告",description="Chrome")
+#     #执行测试套件
+#     runner_test.run(suite)
+#beautiful报告
+BeautifulReport(suite).report\
+    (description="chorm",filename="report.html",log_path="./report")
 
-    #实例化HTMLTestRunner对象
-    runner_test=HTMLTestRunner(f,title="人力资源测试报告",description="Chrome")
-    #执行测试套件
-    runner_test.run(suite)
 
